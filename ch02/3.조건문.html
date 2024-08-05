@@ -60,11 +60,13 @@
     <h4>switch</h4>
 
     <script>
-        let score = prompt('점수 입력'); /*사용자로부터 입력받음*/
-        document.write('입력점수 : ' + score + ', type : ' + typeof score+ '<br>');
-        let parsedScore = parseInt(score/10);
+        let score = prompt('점수 입력');
+        document.write('입력점수 : ' + score + ', type : ' + typeof score + '<br>');
+
+        let result = parseInt(score / 10);
+        document.write('result : ' + result + '<br>');
         
-        switch(parsedScore){
+        switch(result){
             case 9:
                 document.write('A입니다. <br>');
                 break;
