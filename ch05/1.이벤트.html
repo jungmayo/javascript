@@ -14,12 +14,13 @@
 <body>
     <h3>1.이벤트</h3>
     <h4>인라인 이벤트 모델</h4> <!--태그에 직접 이벤트를 추가-->
-    <button onclick="btnClick()">버튼1</button>
+    <button onclick="btnClick">버튼1</button>
     <button ondblclick="btn2Handler()">버튼2</button>
     <button onmousedown="btn3Handler()">버튼3</button>
-
+    <button onclick="alert('빠밤!')">버튼4</button>
     <script>
         // 인라인 이벤트 모델 - 태그의 이벤트 속성으로 이벤트 처리
+
         function btnClick(){
             alert('버튼1!');
         }
