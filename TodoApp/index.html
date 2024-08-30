@@ -84,9 +84,6 @@
         border: 0.5px solid rgb(228, 228, 228);
         box-sizing: border-box;
     }
-
-
-
     </style>
 </head>
 <body>
@@ -127,7 +124,7 @@
         }else{
             let List = document.createElement("li");
             let del = document.createElement('button');
-
+            
             List.innerHTML = addValue.value;
             result.appendChild(List);
             List.appendChild(del);
@@ -150,20 +147,33 @@
         let removeOne = e.target.parentElement;
         removeOne.remove();
     }
-    function saveTodoToLocalStorage(text) {
+
+
+
+        // 할 일 삭제 함수
+        function deleteList(e){
+        let removeOne = e.target.parentElement;
+        removeOne.remove();
+        removeTodoFromLocalStorage(removeOne.textContent.trim().slice(0, -1));
+        }
+
+        // 할 일을 로컬 스토리지에 저장하는 함수
+        function saveTodoToLocalStorage(text) {
             const todos = JSON.parse(localStorage.getItem('todos')) || [];
             todos.push({ text: text });
             localStorage.setItem('todos', JSON.stringify(todos));
-        }
+    }
 
         // 로컬 스토리지에서 할 일을 삭제하는 함수
-    function removeTodoFromLocalStorage(text) {
+        function removeTodoFromLocalStorage(text) {
         let todos = JSON.parse(localStorage.getItem('todos')) || [];
         todos = todos.filter(todo => todo.text !== text);
         localStorage.setItem('todos', JSON.stringify(todos));
         }
+
+
         // 할 일 목록에 추가하는 함수
-    function addTodoToList(todoText) {
+        function addTodoToList(todoText) {
         let List = document.createElement("li");
         let del = document.createElement('button');
 
